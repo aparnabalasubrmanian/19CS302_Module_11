@@ -26,25 +26,26 @@ RegisterNumber:  212222220005
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    char str[100], reversed[100];
-    int length, i;
+int main()
+{
+    char str[100], rev[100];
+    int i, len;
 
     printf("Enter a string: ");
-    scanf("%s", str);  // Reads a single word
+    scanf("%s", str);
 
-    length = strlen(str);
+    len = strlen(str);
 
-    // Reverse manually
-    for (i = 0; i < length; i++) {
-        reversed[i] = str[length - i - 1];
-    }
-    reversed[length] = '\0'; // Null-terminate the reversed string
+    for (i = 0; i < len; i++)
+        rev[i] = str[len - 1 - i];
 
-    printf("Reversed string: %s\n", reversed);
-    
+    rev[len] = '\0';
+
+    printf("Reversed string: %s", rev);
+
     return 0;
 }
+
 ```
 
 ## Output:
