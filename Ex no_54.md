@@ -24,15 +24,16 @@ RegisterNumber:  212222220005
 */
 #include <stdio.h>
 
-int main() {
+int main()
+{
     char ch;
-    
-    for (ch = 'A'; ch <= 'Z'; ch++) {
+
+    for (ch = 'A'; ch <= 'Z'; ch++)
         printf("%c ", ch);
-    }
-    
+
     return 0;
 }
+
 ```
 
 ## Output:
