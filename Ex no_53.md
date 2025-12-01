@@ -29,50 +29,40 @@ RegisterNumber:  212222220005
 */
 #include <stdio.h>
 
-void removeDuplicates(int arr[], int *n) {
-    int temp[*n];
-    int index = 0;
+int main()
+{
+    int n, i, j, k;
+    int a[100];
 
-    for (int i = 0; i < *n; i++) {
-        int duplicate = 0;
-        for (int j = 0; j < index; j++) {
-            if (arr[i] == temp[j]) {
-                duplicate = 1;
-                break;
-            }
-        }
-        if (!duplicate) {
-            temp[index++] = arr[i];
-        }
-    }
-
-    for (int i = 0; i < index; i++) {
-        arr[i] = temp[i];
-    }
-
-    *n = index;
-}
-
-int main() {
-    int n;
     printf("Enter the number of elements: ");
     scanf("%d", &n);
 
-    int arr[n];
     printf("Enter the elements: ");
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
+    for (i = 0; i < n; i++)
+        scanf("%d", &a[i]);
 
-    removeDuplicates(arr, &n);
+    for (i = 0; i < n; i++)
+    {
+        for (j = i + 1; j < n; j++)
+        {
+            if (a[i] == a[j])
+            {
+                for (k = j; k < n - 1; k++)
+                    a[k] = a[k + 1];
+
+                n--;
+                j--;
+            }
+        }
+    }
 
     printf("Array after removing duplicates: ");
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    
+    for (i = 0; i < n; i++)
+        printf("%d ", a[i]);
+
     return 0;
 }
+
 ```
 
 ## Output:
