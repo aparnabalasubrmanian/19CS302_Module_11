@@ -40,25 +40,30 @@ Note: I/O will be automatically handled.
 Developed by: Aparna RB
 RegisterNumber:  212222220005
 */
-#include<stdio.h>
-int compare(int a[4])
+#include <stdio.h>
+
+int max_of_four(int a, int b, int c, int d)
 {
-    int max=a[0];
-    for(int i=0;i<4;i++)
-    {
-        if(a[i]>max)
-        max=a[i];
-    }
+    int max = a;
+
+    if (b > max)
+        max = b;
+    if (c > max)
+        max = c;
+    if (d > max)
+        max = d;
+
     return max;
 }
+
 int main()
 {
-    int a[4];
-    for(int i=0;i<4;i++)
-    scanf("%d",&a[i]);
-    int d= compare(a);
-    printf("%d",d);
+    int a, b, c, d;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+    printf("%d", max_of_four(a, b, c, d));
+    return 0;
 }
+
 ```
 ## OUTPUT
 ![image](https://github.com/user-attachments/assets/aba6d6ba-c7c3-4607-9f04-a740cafd9845)
