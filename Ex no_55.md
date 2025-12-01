@@ -23,19 +23,22 @@ RegisterNumber:  212222220005
 */
 #include <stdio.h>
 
-void findSquare(int num) {
-    printf("Square of %d is: %d\n", num, num * num);
+void square(int n)
+{
+    printf("Square of %d is: %d", n, n * n);
 }
 
-int main() {
-    int number;
+int main()
+{
+    int num;
     printf("Enter a number: ");
-    scanf("%d", &number);
-    
-    findSquare(number);
-    
+    scanf("%d", &num);
+
+    square(num);
+
     return 0;
 }
+
 ```
 
 ## Output:
